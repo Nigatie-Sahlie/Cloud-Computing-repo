@@ -4,10 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'index.html'
-      - '**.html'
-      - '**.css'
-      - '**.js'
+      - 'DevOps/DevOps-1/index.html'
+      - 'DevOps/DevOps-1/**/*.html'
+      - 'DevOps/DevOps-1/**/*.css'
+      - 'DevOps/DevOps-1/**/*.js'
 
 jobs:
   deploy:
@@ -26,7 +26,7 @@ jobs:
     
     - name: Sync files to S3
       run: |
-        aws s3 sync . s3://nigatie-github-action-sit/ --exclude ".git/*" --exclude ".github/*"
+        aws s3 sync DevOps/DevOps-1/ s3://nigatie-github-action-sit/ --exclude ".git/*" --exclude ".github/*"
     
     - name: Invalidate CloudFront (if using)
       run: |
