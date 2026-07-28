@@ -46,9 +46,9 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -f docker/Dockerfile \
+            -f DevOps/DevOps-final/docker/Dockerfile \
             -t "${{ steps.image.outputs.image_uri }}" \
-            .
+            DevOps/DevOps-final
 
       - name: Push Docker image
         run: |
@@ -58,7 +58,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: aws/task-definition.json
+          task-definition: DevOps/DevOps-final/task-definition.json
           container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.image.outputs.image_uri }}
 
