@@ -1,0 +1,8 @@
+#  app-repo is for codecommit and codepush, so we don't want to include it in the repo
+DevOps/DevOps_Final_Project/app-repo/
+DevOps/DevOps_Final_Project/docs/*.pptx
+node_modules/
+
+#ignore serverlessProject and Git_practice directory for now
+serverlessProject/
+Git_practice/

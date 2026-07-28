@@ -1,0 +1,38 @@
+name: First Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Print commit message
+      run: |
+        echo "Commit message: ${{ github.event.head_commit.message }}"
+        echo "Commit author: ${{ github.event.head_commit.author.name }}"
+        echo "Repository: ${{ github.repository }}"
+        echo "Branch: ${{ github.ref_name }}"
+        echo "Runner OS: ${{ runner.os }}"
+    
+    - name: List files in repository
+      run: ls -la
+    
+    - name: Create a file
+      run: |
+        echo "Workflow ran at $(date)" > workflow-info.txt
+        cat workflow-info.txt
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: workflow-info
+        path: workflow-info.txt
