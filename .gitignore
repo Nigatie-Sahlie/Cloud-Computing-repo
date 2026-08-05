@@ -5,4 +5,10 @@ node_modules/
 
 #ignore serverlessProject and Git_practice directory for now
 serverlessProject/
+DevOps/employee-management/
 Git_practice/
+
+# ignore .env file
+DevOps/calculator-app/venv
+DevOps/calculator-app/__pycache__/
+DevOps/calculator-app/.env
