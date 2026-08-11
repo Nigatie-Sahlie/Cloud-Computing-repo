@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/', (req, res) => {
 res.json({
-message: 'Hello from ECS Fargate - app version-5!',
+message: 'Hello from ECS Fargate - new app version 6.0!',
 containerId: process.env.HOSTNAME,
 timestamp: new Date().toISOString()
 });
