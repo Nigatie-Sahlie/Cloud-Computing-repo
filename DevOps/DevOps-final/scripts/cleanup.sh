@@ -5,7 +5,7 @@
 AWS_REGION="us-east-1"
 CLUSTER="my-ecs-cluster"
 SERVICE="my-ecs-service"
-ALB_NAME="my-app-alb"
+ALB_NAME="dev-ops-alb"
 TG_NAME="my-app-tg"
 
 echo "==> Scaling ECS service to 0 (stops Fargate billing)"

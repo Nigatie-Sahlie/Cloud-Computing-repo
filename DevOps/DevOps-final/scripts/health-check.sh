@@ -5,7 +5,7 @@ set -e
 AWS_REGION="us-east-1"
 CLUSTER="my-ecs-cluster"
 SERVICE="my-ecs-service"
-ALB_DNS="my-app-alb-1517669475.us-east-1.elb.amazonaws.com"
+ALB_DNS="dev-ops-alb-998634647.us-east-1.elb.amazonaws.com"
 
 echo "==> ECS service status"
 aws ecs describe-services \
@@ -20,7 +20,7 @@ if curl -sf "http://${ALB_DNS}/health" -o /tmp/health.out; then
   echo "Health check: OK"
   cat /tmp/health.out
 else
-  echo "Health check: FAILED (app not responding)"
+  echo "Health check: FAILED (app not responding)"    
   exit 1
 fi
 
