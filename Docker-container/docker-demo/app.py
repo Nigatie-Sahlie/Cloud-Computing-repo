@@ -8,7 +8,7 @@ def index():
     return f'''
     <html><head><title>Week 8 Demo</title></head>
     <body style="font-family:sans-serif;text-align:center;padding-top:60px">
-    <h1>Container is serving</h1>
+    <h1>Container is serving request</h1>
     <p>Hostname: <code>{socket.gethostname()}</code></p>
     <p>Environment: <code>{os.environ.get("ENVIRONMENT", "unset")}</code></p>
     <p>Version: <code>{os.environ.get("APP_VERSION", "1.0")}</code></p>
